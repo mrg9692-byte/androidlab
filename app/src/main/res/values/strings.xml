@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">androidlab</string>
+    <string name="currency_converter">Currency Converter</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="convert">Convert</string>
+    <string name="converted_value_will_appear_here">Converted value will appear here</string>
+</resources>
