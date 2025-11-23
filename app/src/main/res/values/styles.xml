@@ -1,0 +1,6 @@
+<resources>
+    <!-- Keep your existing Theme.Androidlab entries and add the splash theme -->
+    <style name="Theme.Splash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+</resources>

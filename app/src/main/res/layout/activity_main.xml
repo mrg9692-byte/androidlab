@@ -1,74 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="24dp"
-    android:background="#0F172A"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/currency_converter"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="30dp" />
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/amountInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:autofillHints=""
-        android:background="@drawable/input_bg"
-        android:hint="@string/enter_amount"
+        android:hint="Enter amount"
         android:inputType="numberDecimal"
-        android:padding="12dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#2196F3"
-        tools:ignore="VisualLintTextFieldSize" />
+        android:maxLines="1" />
 
     <Spinner
         android:id="@+id/fromCurrency"
+        android:layout_below="@id/amountInput"
+        android:layout_marginTop="12dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/spinner_bg"
-        android:minHeight="48dp"
-        android:spinnerMode="dropdown" />
+        android:layout_height="wrap_content" />
 
     <Spinner
         android:id="@+id/toCurrency"
+        android:layout_below="@id/fromCurrency"
+        android:layout_marginTop="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/spinner_bg"
-        android:minHeight="48dp"
-        android:spinnerMode="dropdown" />
+        android:layout_height="wrap_content" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/convertBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/convert"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:textAllCaps="false"
-        android:backgroundTint="#2563EB"
-        android:layout_marginTop="25dp"
-        tools:ignore="VisualLintButtonSize" />
-
-    <TextView
-        android:id="@+id/resultText"
+        android:text="Convert"
+        android:layout_below="@id/toCurrency"
+        android:layout_marginTop="12dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/converted_value_will_appear_here"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:layout_marginTop="35dp" />
+        android:layout_height="wrap_content" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/clearBtn"
+        android:text="Clear"
+        android:layout_toEndOf="@id/convertBtn"
+        android:layout_alignTop="@id/convertBtn"
+        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageButton
+        android:id="@+id/themeToggle"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@id/convertBtn"
+        android:src="@drawable/ic_sun"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Toggle theme"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+</RelativeLayout>
